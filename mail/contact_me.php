@@ -21,9 +21,11 @@ $email_subject = "Github Contact Form:  $name, Email: $email_address, Phone: $ph
 $email_body = "$message";
 // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 // Always set content-type when sending HTML email
+
+$from = "prodip@orangetechltd.com";
 $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-$headers .= "Reply-To: $email_address";   
+$headers = "From:" . $from;   
 mail($to,$email_subject,$email_body, $headers);
 return true;         
 ?>
