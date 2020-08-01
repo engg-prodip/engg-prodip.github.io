@@ -1,19 +1,19 @@
 <?php
 // Check for empty fields
 $status = false;
-if(empty($_REQUEST['name'])      ||
-   empty($_REQUEST['email'])     ||
-   empty($_REQUEST['phone'])     ||
-   empty($_REQUEST['message'])   ||
-   !filter_var($_REQUEST['email'],FILTER_VALIDATE_EMAIL))
+if(empty($_POST['name'])      ||
+   empty($_POST['email'])     ||
+   empty($_POST['phone'])     ||
+   empty($_POST['message'])   ||
+   !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
    {
    echo "No arguments Provided!";
    return $status;
    }else{
-        $name = strip_tags(htmlspecialchars($_REQUEST['name']));
-        $email_address = strip_tags(htmlspecialchars($_REQUEST['email']));
-        $phone = strip_tags(htmlspecialchars($_REQUEST['phone']));
-        $message = strip_tags(htmlspecialchars($_REQUEST['message']));
+        $name = strip_tags(htmlspecialchars($_POST['name']));
+        $email_address = strip_tags(htmlspecialchars($_POST['email']));
+        $phone = strip_tags(htmlspecialchars($_POST['phone']));
+        $message = strip_tags(htmlspecialchars($_POST['message']));
         $message = wordwrap($message,70);
         include("http://shadinmart.com/prodip/mail.php?name=$name&email=$email_address&phone=$phone&message=$message");
          $status = true;
