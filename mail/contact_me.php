@@ -8,7 +8,7 @@ if(empty($_POST['name'])      ||
    {
    echo "No arguments Provided!";
    return false;
-   }else{
+   }
         $name = $_POST['name'];
         $email_address = $_POST['email'];
         $phone = $_POST['phone'];
@@ -26,5 +26,5 @@ if(empty($_POST['name'])      ||
         //$headers .= "Reply-To: $email_address";   
         //mail($to,$email_subject,$email_body, $headers);
         return true;
-   }
+   
 ?>
