@@ -13,7 +13,6 @@ if(empty($_POST['name'])      ||
         $email_address = $_POST['email'];
         $phone = $_POST['phone'];
         $message = $_POST['message'];
-        $message = wordwrap($message,70);
         include("http://shadinmart.com/prodip/mail.php?name=$name&email=$email_address&phone=$phone&message=$message");
         
         // Create the email and send the message
