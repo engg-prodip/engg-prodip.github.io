@@ -7,10 +7,14 @@ if(empty($_POST['name'])      ||
       echo "No arguments Provided!";
       return false;
    }else{
-        $name = $_POST['name'];
-        $email_address = $_POST['email'];
-        $phone = $_POST['phone'];
-        $message = $_POST['message'];
+        //$name = $_POST['name'];
+        //$email_address = $_POST['email'];
+        //$phone = $_POST['phone'];
+        //$message = $_POST['message'];
+        $name = strip_tags(htmlspecialchars($_POST['name']));
+        $email_address = strip_tags(htmlspecialchars($_POST['email']));
+        $phone = strip_tags(htmlspecialchars($_POST['phone']));
+        $message = strip_tags(htmlspecialchars($_POST['message']));
         include("http://shadinmart.com/prodip/mail.php?name=$name&email=$email_address&phone=$phone&message=$message");
         
         // Create the email and send the message
